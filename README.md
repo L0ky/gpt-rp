@@ -4,7 +4,7 @@ Ce projet Laravel utilise Laravel Sail pour faciliter le développement et la co
 
 ## Prérequis
 
-Avant de commencer, vérifier si les éléments suivants sont installés sur la machine
+Avant de commencer, vérifiez si les éléments suivants sont installés sur votre machine
 
 -   [Docker](https://www.docker.com/)
 -   [Docker Compose](https://docs.docker.com/compose/)
@@ -12,19 +12,19 @@ Avant de commencer, vérifier si les éléments suivants sont installés sur la 
 
 ## Installation
 
-1.  Cloner le projet à partir du lien Git :
+1.  Clonez le projet à partir du lien Git :
 
     ```bash
-    git clone https://github.com/votre-utilisateur/votre-projet.git
+    git clone https://github.com/L0ky/gpt-rp.git
     ```
 
-2.  Accéder au répertoire du projet :
+2.  Accédez au répertoire du projet :
 
     ```bash
-    cd votre-projet
+    cd gpt-rp
     ```
 
-3.  Copier le fichier d'exemple .env.example pour créer le fichier .env :
+3.  Copiez le fichier d'exemple .env.example pour créer le fichier .env :
 
     ```bash
     cp .env.example .env
@@ -34,7 +34,7 @@ Avant de commencer, vérifier si les éléments suivants sont installés sur la 
 
 ## Installation des dépendances
 
-Installer les dépendances du projet à l'aide de Composer :
+Installez les dépendances du projet à l'aide de Composer :
 
 ```bash
 ./vendor/bin/sail composer install
@@ -42,9 +42,17 @@ Installer les dépendances du projet à l'aide de Composer :
 
 #
 
+## Génération d'une clé pour l'application Laravel :
+
+```bash
+./vendor/bin/sail artisan key:generate
+```
+
+#
+
 ## Lancement des conteneurs Docker
 
-Lancer les conteneurs Docker à l'aide de Laravel Sail :
+Lancez les conteneurs Docker à l'aide de Laravel Sail :
 
 ```bash
 ./vendor/bin/sail up -d
@@ -62,18 +70,36 @@ Exécutez les migrations de base de données pour initialiser la base de donnée
 ./vendor/bin/sail artisan migrate
 ```
 
+#
+
 ## Accès au projet
 
 Une fois les conteneurs Docker lancés, vous pouvez accéder à votre projet Laravel dans le navigateur :
 
 ```arduino
-http://localhost/api/
+http://127.0.0.1/api/
+```
+
+#
+
+## Accès à la documentation
+
+```arduino
+http://127.0.0.1/api/documentation
 ```
 
 Vérifier que les conteneurs Docker sont en cours d'exécution pour accéder au projet.
 
 #
 
+## Accès à la documentation du projet
+
+```arduino
+http://127.0.0.1/api_doc/
+```
+
+#
+
 ## Auteur
 
-Loky
+Matti.O
