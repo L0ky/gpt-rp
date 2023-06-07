@@ -42,6 +42,10 @@ class AuthController extends Controller
 
         $token = $user->createToken('apiToken')->plainTextToken;
 
+        $user->tokens()->where('tokenable_id', $user->id)->where('name', 'apiToken')->update([
+            'expires_at' => now()->addHour(1),
+        ]);
+
         return response([
             'user'  => $user,
             'token' => $token
