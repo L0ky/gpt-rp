@@ -30,6 +30,12 @@ Avant de commencer, vérifiez si les éléments suivants sont installés sur vot
     cp .env.example .env
     ```
 
+4.  Ajoutez votre propre clé d'api dans le .env
+
+    ```bash
+    OPENAI_API_KEY="VOTRE_ClÉ"
+    ```
+
 #
 
 ## Installation des dépendances
