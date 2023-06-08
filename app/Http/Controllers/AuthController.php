@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Business\AuthBusiness;
 use App\Business\UserBusiness;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -41,17 +42,7 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $token = $user->createToken('apiToken')->plainTextToken;
-
-        $accessToken = $user->tokens()
-            ->where('name', 'apiToken')
-            ->latest()
-            ->first();
-    
-        if ($accessToken instanceof PersonalAccessToken) {
-            $accessToken->expires_at = now()->addHour(10);
-            $accessToken->save();
-        }
+        $token = AuthBusiness::createToken($user);
 
         return response([
             'user'  => $user,

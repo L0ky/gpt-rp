@@ -1,6 +1,16 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\App\\Business\\AuthBusiness",
+            "name": "AuthBusiness",
+            "summary": "AuthBusiness",
+            "url": "classes/App-Business-AuthBusiness.html"
+        },                {
+            "fqsen": "\\App\\Business\\AuthBusiness\u003A\u003AcreateToken\u0028\u0029",
+            "name": "createToken",
+            "summary": "Create\u0020a\u0020new\u0020token\u0020for\u0020a\u0020user",
+            "url": "classes/App-Business-AuthBusiness.html#method_createToken"
+        },                {
             "fqsen": "\\App\\Business\\Conversation\\ConversationBusiness",
             "name": "ConversationBusiness",
             "summary": "ConversationBusiness",
@@ -616,6 +626,16 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html"
         },                {
+            "fqsen": "\\App\\Business",
+            "name": "Business",
+            "summary": "",
+            "url": "namespaces/app-business.html"
+        },                {
+            "fqsen": "\\App",
+            "name": "App",
+            "summary": "",
+            "url": "namespaces/app.html"
+        },                {
             "fqsen": "\\App\\Business\\Conversation",
             "name": "Conversation",
             "summary": "",
@@ -630,16 +650,6 @@ Search.appendIndex(
             "name": "Univers",
             "summary": "",
             "url": "namespaces/app-business-univers.html"
-        },                {
-            "fqsen": "\\App\\Business",
-            "name": "Business",
-            "summary": "",
-            "url": "namespaces/app-business.html"
-        },                {
-            "fqsen": "\\App",
-            "name": "App",
-            "summary": "",
-            "url": "namespaces/app.html"
         },                {
             "fqsen": "\\App\\Console",
             "name": "Console",
