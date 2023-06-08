@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Laravel\Sanctum\PersonalAccessToken;
 
 /**
  * Controller for managing auth
@@ -42,9 +43,15 @@ class AuthController extends Controller
 
         $token = $user->createToken('apiToken')->plainTextToken;
 
-        $user->tokens()->where('tokenable_id', $user->id)->where('name', 'apiToken')->update([
-            'expires_at' => now()->addHour(1),
-        ]);
+        $accessToken = $user->tokens()
+            ->where('name', 'apiToken')
+            ->latest()
+            ->first();
+    
+        if ($accessToken instanceof PersonalAccessToken) {
+            $accessToken->expires_at = now()->addHour(10);
+            $accessToken->save();
+        }
 
         return response([
             'user'  => $user,
