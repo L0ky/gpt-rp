@@ -34,7 +34,7 @@ FLUSH PRIVILEGES;
 
 
 -- Joined VIEW
-CREATE VIEW joined_view AS SELECT messages.content, users.username FROM messages INNER JOIN users ON messages.user_id = users.id;
+CREATE VIEW messages_with_username AS SELECT messages.content, users.username FROM messages INNER JOIN users ON messages.user_id = users.id;
 
 -- Simple VIEW
-CREATE VIEW simple_view AS SELECT * FROM messages WHERE user_id = 1
+CREATE VIEW messages_view AS SELECT * FROM messages WHERE user_id = 1
