@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Business\AuthBusiness;
 use App\Business\UserBusiness;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Laravel\Sanctum\PersonalAccessToken;
 
 /**
  * Controller for managing auth
@@ -40,7 +42,7 @@ class AuthController extends Controller
             ], 401);
         }
 
-        $token = $user->createToken('apiToken')->plainTextToken;
+        $token = AuthBusiness::createToken($user);
 
         return response([
             'user'  => $user,

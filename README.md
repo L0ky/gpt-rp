@@ -30,6 +30,12 @@ Avant de commencer, vérifiez si les éléments suivants sont installés sur vot
     cp .env.example .env
     ```
 
+4.  Ajoutez votre propre clé d'api dans le .env
+
+    ```bash
+    OPENAI_API_KEY="VOTRE_ClÉ"
+    ```
+
 #
 
 ## Installation des dépendances
@@ -74,21 +80,13 @@ Exécutez les migrations de base de données pour initialiser la base de donnée
 
 ## Accès au projet
 
-Une fois les conteneurs Docker lancés, vous pouvez accéder à votre projet Laravel dans le navigateur :
+Une fois les conteneurs Docker lancés, vous pouvez accéder à au projet Laravel dans le navigateur :
 
 ```arduino
 http://127.0.0.1/api/
 ```
 
-#
-
-## Accès à la documentation
-
-```arduino
-http://127.0.0.1/api/documentation
-```
-
-Vérifier que les conteneurs Docker sont en cours d'exécution pour accéder au projet.
+Vérifiez que les conteneurs Docker sont en cours d'exécution pour accéder au projet.
 
 #
 
@@ -100,6 +98,22 @@ http://127.0.0.1/api_doc/
 
 #
 
+## Accès à phpmyadmin
+
+```arduino
+http://localhost:8080/
+```
+
+#
+
+## Chemin des requêtes SQL
+
+```
+api/docs/sql
+```
+
+#
+
 ## Auteur
 
-Matti.O
+Loky

@@ -50,11 +50,13 @@ class UserController extends Controller
      * @param int $id
      * @return User
      */
-    public function delete(int $id): User
+    public function delete(int $userId): User
     {
-        $user = User::findOrFail($id);
-        $user->delete();
-        return $user;
+        $this->authorize('deleteUser', User::class); // UserPolicy
+
+        $deletedUser = UserBusiness::deleteUser($userId);
+
+        return $deletedUser;
     }
 
     /**
@@ -66,11 +68,11 @@ class UserController extends Controller
      * @param int $id
      * @return User
      */
-    public function update(Request $request, int $id) 
+    public function update(Request $request, int $userId): User 
     {
         try {
             $data = $request->validate([
-                'name' => 'required|unique:users',
+                'username'    => 'required|unique:users',
             ]);
         } catch (ValidationException $e) {
             return response()->json(
@@ -78,7 +80,9 @@ class UserController extends Controller
             );
         }
 
-        $user = UserBusiness::updateUser($data, $id);
+        $this->authorize('updateUser', [User::class, $userId]); // UserPolicy
+     
+        $user = UserBusiness::updateUser($data, $userId);
 
         return $user;
     }

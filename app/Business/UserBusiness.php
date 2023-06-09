@@ -30,6 +30,19 @@ class UserBusiness
     }
 
     /**
+     * Delete a user
+     *
+     * @param integer $userId
+     * @return User
+     */
+    public static function deleteUser(int $userId): User
+    {
+        $user = User::findOrFail($userId);
+        $user->delete();
+        return $user;
+    }
+
+    /**
      * Update a user
      *
      * @param array $data
@@ -40,7 +53,6 @@ class UserBusiness
     {
         $user = User::findOrFail($userId);
         $user->username  = $data['username'];
-
         $user->save();
 
         return $user;

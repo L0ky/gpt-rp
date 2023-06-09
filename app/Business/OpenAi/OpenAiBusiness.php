@@ -25,7 +25,8 @@ class OpenAiBusiness
     /**
      * Generate a character description
      *
-     * @param  mixed $result
+     * @param string $name
+     * @param string $univers_name
      * @return string
      */
     public static function generateCharacterDescription(string $name, string $univers_name): string

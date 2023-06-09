@@ -22,16 +22,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/documentation', [DocumentationController::class, 'index']);
-
 // Auth
 Route::group(['prefix' => 'auth'], function () {
     Route::post('/register', [AuthController::class, 'register']);
