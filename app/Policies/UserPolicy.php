@@ -10,12 +10,28 @@ class UserPolicy
     use HandlesAuthorization;
 
     /**
-     * Create a new policy instance.
+     * Authorization to delete a user 
      *
-     * @return void
+     * @param User $user
+     * @return bool
      */
-    public function __construct()
+    public function deleteUser(User $user): bool
     {
-        
+        if ($user->email === 'admin@admin.com') return true;
+        return false;
+    }
+
+    /**
+     * Authorization to update a user
+     *
+     * @param User $user
+     * @param integer $targetUserId
+     * @return bool
+     */
+    public function updateUser(User $user, $targetUserId): bool
+    {
+        if ($user->email === 'admin@admin.com') return true;
+        if ($user->id === $targetUserId) return true;
+        return false;
     }
 }

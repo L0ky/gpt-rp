@@ -27,7 +27,7 @@ services:
         image: phpdoc/phpdoc:3
         volumes:
             - "./:/data"
-        command: phpdoc -d app -t public/docs
+        command: phpdoc -d app -t public/api_doc
         networks:
             - sail
     mysql:
